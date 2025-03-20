@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <!--<link rel="stylesheet" href="/static/style.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="webPageContainer">
+        <h1 class="text-center headingText mb-4">Movie Suggestion Engine</h1>
+        <form action="/recommend" method="post">
+            <div class="form-group">
+                <input type="text" 
+                       name="title" 
+                       class="form-control" 
+                       id="movieInput" 
+                       list="movieSuggestions" 
+                       placeholder="Enter a movie name" 
+                       required>
+                
+                <datalist id="movieSuggestions">
+                    {% for movie in suggestions %}
+                    <option value="{{ movie }}">
+                    {% endfor %}
+                </datalist>
+            </div>
+            <button type="submit" class="customBtn">Get Recommendations</button>
+        </form>
+        <h3 class="popMoviesHeading mt-4">Popular Movies</h3>
+        <div class="mt-3 pb-5" id="main">
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: "inception", the implantation of another person's idea into a target's subconscious.
+                </div>
+            </div>
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>Interstellar</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.
+                </div>
+            </div>
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/lQfuaXjANoTsdx5iS0gCXlK9D2L.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>Devara</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    Weapons recite the story of one man and his terrifying tale who is a mighty sea warrior takes a violent stand against the criminal deeds of his village. Years later, his mild-mannered son walks a path of his own.
+                </div>
+            </div>
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>Thor: Ragnarok</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    Thor: Ragnarok","Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the destruction of his home-world and the end of Asgardian civilization, at the hands of a powerful new threat, the ruthless Hela.
+                </div>
+            </div>
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/zq8Cl3PNIDGU3iWNRoc5nEZ6pCe.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>Deadpool</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    The origin story of former Special Forces operative turned mercenary Wade Wilson, who, after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.
+                </div>
+            </div>
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>The Dark Knight</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.
+                </div>
+            </div>
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/kyeqWdyUXW608qlYkRqosgbbJyK.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>Avatar</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.
+                </div>
+            </div>
+            <div class="movie">
+                <img class="moviePoster" src="https://image.tmdb.org/t/p/original/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg" alt="image"/>
+                <div class="movie-info">
+                    <h3>The Avengers</h3>
+                </div>
+                <div class="overview">
+                    <h3>
+                        Overview
+                    </h3>
+                    When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

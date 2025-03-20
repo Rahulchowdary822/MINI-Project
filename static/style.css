@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    background-image: url('Netflix\ Indian\ Movies\ and\ Web\ Series.jpeg');
+    backdrop-filter: blur(1.5px);
+    background-size: cover;
+}
+
+.webPageContainer {
+    padding: 20px;
+}
+
+.headingText {
+    color: #F0EBD8;
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 20px;
+    text-shadow: 3px 2px #1D2D44;
+}
+
+.customBtn {
+    background-color: #1D2D44;
+    padding: 8px;
+    color: #F0EBD8;
+    border: 1px solid #b7b7b7;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.customBtn:hover {
+    background-color: #748CAB;
+    color: #1D2D44;
+}
+
+#main{
+    display: flex;
+    overflow-x: auto;
+    max-height: 800px;
+    scroll-behavior: smooth;
+}
+
+#main::-webkit-scrollbar {
+    height: 10px;
+}
+
+#main::-webkit-scrollbar-thumb {
+    background: #1D2D44;
+    border-radius: 10px;
+}
+
+#main::-webkit-scrollbar-track {
+    background: #748CAB;
+}
+
+.movie {
+    flex: 0 0 auto;
+}
+
+.movie {
+    border-radius: 10px;
+    width: 350px;
+    background-color: #1D2D44;
+    position: relative;
+    overflow: hidden;
+    margin-right: 25px;
+}
+
+.userInputMovie {
+    background-color: #1D2D44;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+}
+
+.moviePosterContainer{
+    width: 450px;
+}
+
+.moviePosterContainer img{
+    width: 100%;
+}
+
+.movie img{
+    width: 100%;
+}
+
+.movie-info{
+    color: #eee;
+    align-items: center;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.overview{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+
+.popMoviesHeading{
+    color: #F0EBD8;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px #1D2D44;
+}
+
+.userInputOverview {
+    background-color: #eee;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 25px;
+}
+
+.overviewText{
+    font-family: sans-serif;
+    padding: 20px;
+}

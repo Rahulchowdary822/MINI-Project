@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <!--<link rel="stylesheet" href="/static/style.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn btn-primary mt-5">Back</a>
+        <h1 class="text-center mb-4 headingText">You have searched for {{ input_movie.title }}</h1>
+        <div class="row">
+            <div class="userInputMovie col-12 p-0"> 
+                <div class="moviePosterContainer">
+                    <img src="{{ input_movie.poster_path }}" class="card-img-top" alt="{{ input_movie.title }}">
+                    <div class="movie-info">
+                        <h5 class="card-title">{{ input_movie.title }}</h5>
+                        <p>Rating: {{ input_movie.vote_average }}/10</p>
+                    </div>
+                </div>
+                <div class="userInputOverview">
+                    <h3>Overview</h3>
+                    <p class="overviewText p-5">{{ input_movie.overview }}</p>
+                </div>
+            </div>
+            <h2 class="popMoviesHeading col-12">Recommended for you</h2>
+            <div id="main">
+                {% for movie in recommendations %}
+                <div class="movie">
+                    <img src="{{ movie.poster_path }}" class="moviePoster" alt="{{ movie.title }}">
+                    <div class="movie-info">
+                        <h3>{{ movie.title }}</h3>
+                        <p>Rating: {{ movie.vote_average }}/10</p>
+                    </div>
+                    <div class="overview">
+                        <h3>
+                            Overview
+                        </h3>
+                        <p>{{ movie.overview[:100] }}...</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
